@@ -8,6 +8,22 @@ public class ArithmeticCalculator {
     }
 
     public void calculate(Operation type) {
+
+        switch (type) {
+            case ADD:
+                System.out.println("Результат сложения равен: " + (a + b));
+                break;
+
+            case SUBTRACT:
+                System.out.println("Результат вычитания равен: " + (a - b));
+                break;
+
+            case MULTIPLY:
+                System.out.println("Результат умножения равен: " + (a * b));
+                break;
+        }
+
+   /*
         if (type == Operation.ADD) {
             System.out.println("ADD: " + (a + b));
         } else if (type == Operation.SUBTRACT) {
@@ -15,7 +31,7 @@ public class ArithmeticCalculator {
         } else {
             int c = a - b;
             System.out.println("MULTIPLY: " + (a * b));
-        }
+        }*/
 
     }
 }
