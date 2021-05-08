@@ -66,7 +66,7 @@ public class Computer {
     }
 
     public int totalWeight() {
-        return processor.getProcessorWeight() + randomAccessMemory.getRAMWeight() + hardDisk.getHardDiskWeight() + monitorScreen.getMonitorWeight() + keyboard.getKeyboardWeight();
+        return processor.getProcessorWeight() + randomAccessMemory.getRamWeight() + hardDisk.getHardDiskWeight() + monitorScreen.getMonitorWeight() + keyboard.getKeyboardWeight();
     }
 
     public String toString() {

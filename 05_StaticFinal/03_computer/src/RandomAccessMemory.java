@@ -1,30 +1,30 @@
 public class RandomAccessMemory {
     private final TypeOfRAM typeOfRAM;
-    private final int RAMVolume;
-    private final int RAMWeight;
+    private final int ramVolume;
+    private final int ramWeight;
 
-    public RandomAccessMemory(TypeOfRAM typeOfRAM, int RAMVolume, int RAMWeight) {
+    public RandomAccessMemory(TypeOfRAM typeOfRAM, int ramVolume, int ramWeight) {
         this.typeOfRAM = typeOfRAM;
-        this.RAMVolume = RAMVolume;
-        this.RAMWeight = RAMWeight;
+        this.ramVolume = ramVolume;
+        this.ramWeight = ramWeight;
     }
 
     public TypeOfRAM getTypeOfRAM() {
         return typeOfRAM;
     }
 
-    public int getRAMVolume() {
-        return RAMVolume;
+    public int getRamVolume() {
+        return ramVolume;
     }
 
-    public int getRAMWeight() {
-        return RAMWeight;
+    public int getRamWeight() {
+        return ramWeight;
     }
 
     public String toString() {
         return "Оперативная память: тип - " +
                 typeOfRAM + ", объём оперативной памяти - " +
-                RAMVolume + " Гб, вес - " +
-                RAMWeight + " гр.";
+                ramVolume + " Гб, вес - " +
+                ramWeight + " гр.";
     }
 }
