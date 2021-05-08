@@ -27,7 +27,8 @@ public class Main {
             int sumOfNum = 0;
 
             for (int i = 0; i < stringNum.length(); i++) {
-                sumOfNum = sumOfNum + Integer.parseInt(String.valueOf(stringNum.charAt(i)));
+                sumOfNum = sumOfNum + Character.getNumericValue(stringNum.charAt(i));
+              /*  sumOfNum = sumOfNum + Integer.parseInt(String.valueOf(stringNum.charAt(i)));*/
 
             }
             return sumOfNum;
