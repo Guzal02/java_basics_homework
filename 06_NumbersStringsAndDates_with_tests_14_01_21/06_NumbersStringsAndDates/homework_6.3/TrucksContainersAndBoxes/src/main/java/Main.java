@@ -6,7 +6,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String boxes = scanner.nextLine();
 
-        double numBoxes = Double.parseDouble(boxes);
+        int numBoxes = Integer.parseInt(boxes);
 
         // TODO: вывести в консоль коробки разложенные по грузовикам и контейнерам
         // пример вывода при вводе 2
@@ -23,14 +23,32 @@ public class Main {
         */
         final int MAX_CONTAINERS = 12;
         final int MAX_BOXES = 27;
-        int box = 0;
+        final int MAX_BOXES_IN_ONE_TRUCK = MAX_CONTAINERS * MAX_BOXES;
+  /*      int box = 0;*/
         int truck = 0;
         int container = 0;
-        double ceil = Math.ceil(numBoxes / (MAX_BOXES * MAX_CONTAINERS));
-        int trucks = (int) ceil;
-        int containers = (int) Math.ceil(numBoxes / MAX_BOXES);
+        int i = 0;
 
-        for (int i = truck; i < trucks; i++) {
+        while (i < numBoxes) {
+            if(i % MAX_BOXES_IN_ONE_TRUCK == 0) {
+                System.out.println("Грузовик: " + ++truck);
+            }
+            if(i % MAX_BOXES == 0)  {
+                System.out.println("\tКонтейнер: " + ++container);
+            }
+            System.out.println("\t\tЯщик: " + ++i);
+        }
+
+        System.out.println("Необходимо:" + System.lineSeparator() +
+                "грузовиков - " + truck + " шт." +
+                System.lineSeparator() + "контейнеров - " + container + " шт.");
+
+
+      /*  double ceil = Math.ceil(numBoxes / (MAX_BOXES * MAX_CONTAINERS));
+        int trucks = (int) ceil;
+        int containers = (int) Math.ceil(numBoxes / MAX_BOXES);*/
+
+/*        for (int i = truck; i < trucks; i++) {
             truck += 1;
             if (truck == 1) {
                 System.out.println("Грузовик: " + truck);
@@ -53,9 +71,13 @@ public class Main {
                     System.out.println("\t\tЯщик: " + box);
                 }
             }
-        }
-        System.out.println("Необходимо:" + System.lineSeparator() +
+        }*/
+
+
+
+
+       /* System.out.println("Необходимо:" + System.lineSeparator() +
                             "грузовиков - " + trucks + " шт." +
-                            System.lineSeparator() + "контейнеров - " + containers + " шт.");
+                            System.lineSeparator() + "контейнеров - " + containers + " шт.");*/
     }
 }
