@@ -14,11 +14,11 @@ public class Main {
         int sum = 0;
         if (text.matches(".*\\d+.*")) {
             String[] numText = text.replaceAll("[^,0-9]", "").split(",\\s*");
-            int[] ArrSum = new int[numText.length];
+            int[] arrSum = new int[numText.length];
 
             for (int i = 0; i < numText.length; i++) {
-                ArrSum[i] = Integer.parseInt(numText[i]);
-                sum += ArrSum[i];
+                arrSum[i] = Integer.parseInt(numText[i]);
+                sum += arrSum[i];
             }
         }
         return sum;
