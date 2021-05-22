@@ -16,28 +16,8 @@ public class Main {
       String lastName = "";
       String fistName = "";
       String surname = "";
-      int spaceCounter = 0;
-      boolean isTrue = false;
 
-      if (input.length() != 0) {
-        spaceCounter++;
-
-        for(int i = 0; i < input.length(); i++) {
-          if (input.charAt(i) == ' ') {
-            spaceCounter ++;
-          }
-        }
-      }
-
-      for(int i = 0; i < input.length(); i++) {
-        char chrs = input.charAt(i);
-        if (Character.UnicodeBlock.of(chrs) == Character.UnicodeBlock.CYRILLIC && input.indexOf(' ') != -1 && !input.equals(input.toLowerCase()) && spaceCounter == 3) {
-          isTrue = true;
-          break;
-        }
-      }
-
-      if (isTrue) {
+      if (isCorrect(input)) {
         int SpaceIndex = input.indexOf(' ');
         lastName = input.substring(0, SpaceIndex).trim();
 
@@ -54,4 +34,26 @@ public class Main {
     }
   }
 
+  private static boolean isCorrect(String input) {
+    int spaceCounter = 0;
+    boolean isTrue = false;
+    if (input.length() != 0) {
+      spaceCounter++;
+
+      for(int i = 0; i < input.length(); i++) {
+        if (input.charAt(i) == ' ') {
+          spaceCounter++;
+        }
+      }
+    }
+
+    for(int i = 0; i < input.length(); i++) {
+      char chrs = input.charAt(i);
+      if (Character.UnicodeBlock.of(chrs) == Character.UnicodeBlock.CYRILLIC && input.indexOf(' ') != -1 && !input.equals(input.toLowerCase()) && spaceCounter == 3) {
+        isTrue = true;
+        break;
+      }
+    }
+    return isTrue;
+  }
 }
