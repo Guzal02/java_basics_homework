@@ -7,13 +7,13 @@ public class Main {
 
     public static String splitTextIntoWords(String text) {
         //TODO реализуйте метод
-
-        String[] words = text.split("[^a-zA-Z]+");
+        StringBuilder newWords = new StringBuilder();
+        String[] words = text.split("[^a-zA-Z’]+");
         if (words.length > 100) {
             for (int i = 0; i < words.length; i++) {
-                System.out.println(words[i]);
+                newWords.append(words[i]).append("\n");
             }
         }
-        return "";
+        return newWords.toString().trim();
     }
 }
