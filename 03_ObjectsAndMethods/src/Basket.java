@@ -59,15 +59,15 @@ public class Basket {
 
 
     public void add(String name, int price) {
-        add(name, price, 0, 0);
+        add(name, price, 1, 1.0);
     }
 
     public void add(String name, int price, double weight) {
-        add(name, price, 0, weight);
+        add(name, price, 1, weight);
     }
 
     public void add(String name, int price, int count) {
-        add(name, price, count, 0);
+        add(name, price, count, 1.1);
     }
 
     public void add(String name, int price, int count, double weight) {

@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
         Basket basket = new Basket();
-        basket.add("Milk", 40, 1, 1000);
+        basket.add("Milk", 40, 10.10);
         basket.add("Bread", 20, 1, 200);
         basket.print("Milk, Bread");
         System.out.println(basket.getTotalWeight());
