@@ -9,4 +9,3 @@ public class IndividualBusinessman extends LegalPerson {
                 amountToPut - (amountToPut * PUT_FEE) : amountToPut - (amountToPut * PUT_FEE_2));
     }
 }
- пш
