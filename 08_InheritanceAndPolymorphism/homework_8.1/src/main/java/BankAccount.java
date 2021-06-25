@@ -1,5 +1,5 @@
 public class BankAccount {
-    public double account;
+    private double account;
 
     public double getAmount() {
         return account;
@@ -18,13 +18,14 @@ public class BankAccount {
         if (!(amountToTake > account)) {
             account = account - amountToTake;
             System.out.println("Со счета списано: " + amountToTake + " у.е. Остаток доступных средств состовляет: " + account + " у.е");
+            return true;
         } else {
             System.out.println("Сумма на вашем счету составляет: " + account + " у.е. НЕДОСТАТОЧНО СРЕДСТВ!");
+            return false;
         }
-      return true;
     }
 
     boolean send(BankAccount receiver, double amount) {
-       return receiver.take(amount);
+        return receiver.take(amount);
     }
 }

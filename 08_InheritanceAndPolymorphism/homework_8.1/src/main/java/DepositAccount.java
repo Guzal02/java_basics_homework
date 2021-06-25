@@ -1,20 +1,23 @@
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.time.LocalDate;
+import static java.time.temporal.ChronoUnit.DAYS;
 
 public class DepositAccount extends BankAccount {
 
-    Calendar lastIncome = new GregorianCalendar();
-    int days = lastIncome.get(Calendar.DAY_OF_MONTH);
-    int months = lastIncome.get(Calendar.MONTH);
-    int years = lastIncome.get(Calendar.YEAR);
+    private LocalDate lastIncome;
 
+    @Override
+    public void put(double amountToPut) {
+        lastIncome = LocalDate.now();
+        super.put(amountToPut);
+    }
+
+    @Override
     public boolean take(double amountToTake) {
-        if (!(amountToTake > account) && (days > 30 || months > 0 || years > 0)) {
-            account = account - amountToTake;
-            System.out.println("Со счета списано: " + amountToTake + " у.е. Остаток доступных средств состовляет: " + account + " у.е");
+        if(LocalDate.now().isAfter(lastIncome.plusMonths(1))) {
+            return super.take(amountToTake);
         } else {
-            System.out.println("Сумма на вашем счету составляет: " + account + " у.е. НЕДОСТАТОЧНО СРЕДСТВ!");
+            System.out.println("С момента последнего попления не прошел месяц! Попробуейте через " + DAYS.between(LocalDate.now(), lastIncome) + " дней");
+            return false;
         }
-        return true;
     }
 }
