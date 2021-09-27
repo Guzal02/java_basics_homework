@@ -1,0 +1,3 @@
+2021-09-09 13:46:26.932 [main] ERROR exception - Произошла ошибка!
+java.lang.NullPointerException: Хами дурачек!!
+	at Main.main(Main.java:31) [classes/:?]
